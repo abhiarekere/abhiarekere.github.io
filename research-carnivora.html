@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chromosome Number Evolution in Carnivora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="detail-page">
+
+    <span class="badge">2020 – 2023</span>
+
+    <h1>Chromosome Number Evolution in Carnivora</h1>
+    <p class="author">Abhimanyu Arekere</p>
+    <p class="affiliation">Blackmon Lab · Bioinformatics Lab, Texas A&amp;M University</p>
+
+    <figure>
+      <img src="images/carnivora.png" alt="Phylogeny with range size and chromosome number">
+      <figcaption>
+        Carnivora phylogeny annotated with range size and haploid chromosome number.
+      </figcaption>
+    </figure>
+
+    <section class="abstract">
+      <h2>Abstract</h2>
+      <p>
+        Chromosome number is a fundamental genomic trait, yet the causes of variation
+        in its rate of evolution across lineages remain poorly understood. This project
+        tested whether effective population size, approximated using range size, shapes
+        rates of chromosome fusions and fissions in Carnivora. Using reproducible R
+        workflows and Bayesian phylogenetic modeling, we found that species with small
+        range sizes show elevated rates of chromosome number evolution, supporting the
+        hypothesis that structural rearrangements are mildly deleterious and more likely
+        to fix through genetic drift in smaller populations [2].
+      </p>
+    </section>
+
+    <section>
+      <h2>The Problem</h2>
+      <p>
+        Across large clades, most lineages show relative stasis in chromosome number
+        while a handful show striking variation. Prior work suggested female meiotic
+        drive shapes karyotype evolution in mammals, but Carnivora shows variation that
+        the meiotic drive model could not adequately explain [2]. We hypothesized that
+        variation in effective population size might underlie this rate variation.
+      </p>
+    </section>
+
+    <section>
+      <h2>What I Worked On</h2>
+      <ul>
+        <li>
+          Collected and integrated multiple biological data types: chromosome numbers
+          from karyotype compilations, GBIF species occurrence data, and species-level
+          phylogenies [2].
+        </li>
+        <li>
+          Used the GeoRange R library to estimate species range sizes from longitudinal
+          and latitudinal occurrence data, then validated estimates against previously
+          published range data [2].
+        </li>
+        <li>
+          Helped run reproducible R workflows for downstream comparative analyses,
+          with all scripts version-controlled and reproducible.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Methods</h2>
+      <p>
+        We fit a model of chromosome number evolution to each tree in a posterior
+        distribution of 100 trees, estimating separate rates of fusion and fission for
+        lineages with small versus large range sizes. Models were built using the
+        chromePlus R package and fit using a Bayesian approach in diversitree, with
+        MCMC run for 500 generations across each tree [2]. We also implemented tip-rate
+        reconstruction and a rate heterogeneity analysis to check whether a small number
+        of outlier taxa were driving the results [2].
+      </p>
+    </section>
+
+    <section class="key-finding">
+      <h2>Key Finding</h2>
+      <p>
+        Rates of both fusions and fissions were elevated in taxa with small range sizes
+        relative to those with large range sizes (ΔR<sub>fusion</sub> = 0.101, ΔR<sub>fission</sub> = 0.163,
+        with 95% credible intervals excluding zero) [2]. This supports the conclusion that
+        chromosome-number mutations are mildly deleterious or underdominant, and are more
+        likely to fix via drift in species with small effective population sizes [2].
+      </p>
+    </section>
+
+    <section>
+      <h2>Skills &amp; Tools</h2>
+      <div class="tags">
+        <span class="tag">R</span>
+        <span class="tag">chromePlus</span>
+        <span class="tag">diversitree</span>
+        <span class="tag">phytools</span>
+        <span class="tag">GeoRange</span>
+        <span class="tag">MCMC / Bayesian Modeling</span>
+        <span class="tag">Phylogenetics</span>
+        <span class="tag">Data Cleaning &amp; Integration</span>
+        <span class="tag">GitHub</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Publication</h2>
+      <p>
+        Jonika, M. M., Wilhoit, K. T., Chin, M., <strong>Arekere, A.</strong>, &amp;
+        Blackmon, H. 2024. Drift drives the evolution of chromosome number II: The
+        impact of range size on genome evolution in Carnivora.
+        <em>Journal of Heredity</em>, 115, 524–531 [2].
+      </p>
+      <a class="research-link" href="https://doi.org/10.1093/jhered/esae025" target="_blank">
+        📄 Read the paper
+      </a>
+    </section>
+
+    <p><a class="back-link" href="index.html">← Back to research</a></p>
+
+  </main>
+</body>
+</html>
