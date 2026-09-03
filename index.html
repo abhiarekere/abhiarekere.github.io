@@ -1,155 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neurogenetics Assay Development & Sequencing Data Analysis</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="detail-page">
 
-    <span class="badge">Summer 2023 & Summer 2025</span>
+  <header>
+    <h1>Abhi Arekere</h1>
+    <p>Student / Researcher / Developer</p>
 
-    <h1>Neurogenetics Assay Development & Sequencing Data Analysis</h1>
-    <p class="author">Abhimanyu Arekere</p>
-    <p class="affiliation">Keene Lab · Texas A&amp;M University</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <figure>
-      <img src="images/neurogenetics.png" alt="Neurogenetics research workflow">
-      <figcaption>
-        Neurogenetics research combining behavioral assays, microscopy, tissue preparation, and computational analysis.
-      </figcaption>
-    </figure>
+  <main>
 
-    <section class="abstract">
+    <section id="about">
       <h2>About</h2>
       <p>
-        Across two summers in a neurogenetics lab studying how genes, neural circuits, and internal
-        state shape behavior, I worked with Mexican cavefish and Drosophila model systems. My primary
-        project asked a focused question: does Alzheimer's-associated neurodegeneration impair the
-        olfactory system in Drosophila?
-      </p>
-      <p>
-        My work spanned brain dissections and ablations, tissue mounting, microscopy, immunofluorescence
-        staining, and behavioral assay design, along with computational analysis of the resulting data.
-        Working with a graduate student, I also ran R-based single-nucleus RNA-seq (snRNA-seq) analysis
-        workflows using tools such as Seurat, Signac, and Monocle3, gaining hands-on exposure to
-        sequencing-derived neurogenetics datasets.
+        Hi, I’m Abhi. I am interested in engineering, software and data systems, and biological research.
+        I enjoy working at the intersection of wet lab science and computational tools to solve operational problems and improve patient outcomes. This website contains my projects,
+        research interests, resume, and contact information.
       </p>
     </section>
 
-    <section>
-      <h2>The Problem</h2>
-      <p>
-        Neurodegenerative disease models can alter sensory behavior, but behavioral assays are difficult
-        to interpret when the same animals may also carry age-related or disease-related locomotor
-        deficits. If a fly's movement ability affects its response, an olfactory assay can mistakenly
-        measure impaired locomotion instead of an actual olfactory deficit.
-      </p>
-      <p>
-        This project used Drosophila Alzheimer's-associated genetic models to test olfactory function
-        while redesigning the assay to reduce that confound. More broadly, the work required connecting
-        biological structure, neural function, and measurable behavior, and translating experimental
-        outputs, such as microscopy images, behavioral results, and sequencing data, into quantitative,
-        interpretable datasets.
-      </p>
-    </section>
+    <section id="research">
+      <h2>Research</h2>
+<p class="research-intro">
+    My research spans computational biology, neurogenetics, and
+    tumor and nanoparticle dynamics. I'm interested in building reproducible, data-driven
+    systems that connect biological research with engineering and analytics.
+  </p>
 
-    <section>
-      <h2>Primary Project: Olfactory Behavior in Alzheimer's Models</h2>
-      <p>
-        The central project tested whether Drosophila models of Alzheimer's-associated neurodegeneration
-        show impaired olfactory function. We worked with several genetic backgrounds, including human
-        APOE4 (a late-onset Alzheimer's risk factor), the Arctic (E22G) amyloid-beta line (an aggressive,
-        early-onset familial model), APOE3 as a comparison isoform, and control lines such as w1118 and
-        nsyb-Gal4 drivers.
-      </p>
-      <p>
-        Behavior was measured using odor trap assays in which flies chose between a water control and a
-        low, attractive concentration of acetic acid. Assays were run across genotype, age (5-, 10-, and
-        20-day cohorts), and treatment conditions (DMSO vs. rotenone, a stress-inducing agent), allowing
-        us to compare odor-guided behavior across disease models and aging.
-      </p>
-    </section>
 
-    <section>
-      <h2>Assay Redesign</h2>
-      <p>
-        My main contribution was redesigning the trap assay to isolate olfaction from locomotion. In the
-        original setup, flies had to climb or fly up into elevated tubes to reach the odor, which penalized
-        starved, aged, or neurodegenerative flies with reduced mobility.
-      </p>
-      <p>
-        I modified the design by embedding modified microcentrifuge-tube traps flush with the surface of
-        an agar-filled flask. Each flask held one water tube and one acetic acid tube, with pipette-tip
-        caps that let flies enter but not exit. Because the tube openings sat level with the agar surface,
-        flies could walk down into a trap with minimal locomotor effort, making the readout far more
-        specific to odor response rather than movement capacity.
-      </p>
-    </section>
+      <div class="card">
+  <div class="research-item">
+    <a class="research-thumb" href="research-carnivora.html">
+      <img src="images/carnivora.png" alt="Chromosome number evolution in Carnivora">
+    </a>
 
-    <section>
-      <h2>Sequencing & Neural Tissue Work</h2>
-      <p>
-        Working alongside a graduate student, I contributed to a second research area involving both
-        wet-lab and computational components. On the wet-lab side, I performed Drosophila brain
-        dissections, tissue mounting, immunofluorescence staining, and microscopy of neural and glial
-        tissue.
-      </p>
-      <p>
-        On the computational side, I ran R-based snRNA-seq analysis workflows on larval cavefish
-        sequencing datasets using Seurat, Signac, Monocle3, and related packages. This involved package
-        setup, executing and troubleshooting scripts, and interpreting outputs from single-cell and
-        single-nucleus analysis pipelines. This is my primary sequencing-adjacent experience and gave me
-        direct exposure to reproducible computational workflows for high-dimensional sequencing data.
-      </p>
-    </section>
+    <div class="research-content">
+      <h3>
+        <a href="research-carnivora.html">Chromosome Number Evolution in Carnivora</a>
+      </h3>
 
-    <section>
-      <h2>Additional Work: Activity Monitoring</h2>
       <p>
-        On an occasional basis, I supported Drosophila Activity Monitor (DAM) experiments, helping set up
-        DAMs and work with the associated software for fly lines treated with candidate compounds from
-        other labs to evaluate whether activity phenotypes improved.
+        This project investigated how range size and genetic drift influence chromosome number evolution across Carnivora. 
+        I built R-based workflows to clean, integrate, and analyze comparative genomics datasets, including chromosome counts, 
+        GBIF species occurrence data, and phylogenetic trees. The analysis used phylogenetic modeling and statistical methods to 
+        evaluate whether species with smaller range sizes showed elevated rates of chromosome fusions and fissions.
+        Built reproducible R workflows to clean, integrate, and analyze comparative
+        genomics datasets across genomic, GBIF occurrence, chromosome count, and
+        phylogenetic sources. Applied phylogenetic modeling and Bayesian statistical
+        analysis to evaluate how range size and genetic drift influence chromosome
+        fusions and fissions in Carnivora. This work contributed computational analysis
+        to a peer-reviewed publication in the <em>Journal of Heredity</em>.
       </p>
-    </section>
 
-    <section class="key-finding">
-      <h2>Systems Thinking &amp; Approach</h2>
-      <p>
-        This work strengthened my ability to treat biological experiments as systems that can be measured,
-        modified, and improved. The assay redesign followed a clear problem-solving loop: identify a source
-        of bias, re-engineer the experimental setup, and improve the reliability of the readout. The
-        computational work reinforced how experimental design, data quality, and reproducible workflows
-        together determine the reliability of biological conclusions.
-      </p>
-    </section>
-
-    <section>
-      <h2>Skills &amp; Tools</h2>
       <div class="tags">
-        <span class="tag">Neurogenetics</span>
-        <span class="tag">Drosophila</span>
-        <span class="tag">Mexican Cavefish</span>
-        <span class="tag">Behavioral Assays</span>
-        <span class="tag">Assay Optimization</span>
-        <span class="tag">Brain Dissections</span>
-        <span class="tag">Tissue Mounting</span>
-        <span class="tag">Microscopy</span>
-        <span class="tag">Immunofluorescence</span>
         <span class="tag">R</span>
-        <span class="tag">Python</span>
-        <span class="tag">Excel</span>
-        <span class="tag">Seurat</span>
-        <span class="tag">Signac</span>
-        <span class="tag">Monocle3</span>
-        <span class="tag">snRNA-seq Workflows</span>
+        <span class="tag">Phylogenetics</span>
+        <span class="tag">Data Integration</span>
+        <span class="tag">Bayesian Modeling (MCMC)</span>
+        <span class="tag">GBIF</span>
+        <span class="tag">Statistical Analysis</span>
+      </div>
+
+      <a class="research-link" href="https://doi.org/10.1093/jhered/esae025" target="_blank">
+         Paper
+      </a>
+    </div>
+  </div>
+
+</section>
+    
+          <div class="card">
+    <div class="research-item">
+  <a class="research-thumb" href="research-neurogenetics.html">
+    <img src="images/neurogenetics.png" alt="Neurogenetics assay development and sequencing data analysis">
+  </a>
+
+  <div class="research-content">
+    <h3>
+      <a href="research-neurogenetics.html">Neurogenetics Assay Development & Sequencing Data Analysis</a>
+    </h3>
+
+    <p>
+      Conducted neurogenetics research across Mexican cavefish and Drosophila model systems,
+      combining behavioral assays, brain dissections, tissue mounting, microscopy, immunofluorescence,
+      and quantitative data analysis. Designed and optimized Drosophila olfactory behavioral assays
+      to study neurodegeneration-associated phenotypes, including an agar-based assay modification
+      to reduce locomotor bias and improve experimental interpretability.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Neurogenetics</span>
+      <span class="tag">Behavioral Assays</span>
+      <span class="tag">Microscopy</span>
+      <span class="tag">Immunofluorescence</span>
+      <span class="tag">R</span>
+      <span class="tag">Python</span>
+      <span class="tag">snRNA-seq Workflows</span>
+    </div>
+  </div>
+</div>
+
+    
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="card">
+        <h3>Clinical Genomics Workflow Monitoring</h3>
+        <p>
+          Let's see if this thing works. Describe what the project does, what tools you used, and what you learned.
+        </p>
+        <p><strong>Tools:</strong> Python, JavaScript, HTML, CSS</p>
+        <a href="#">GitHub Link</a>
+      </div>
+
+      <div class="card">
+        <h3>Another Project</h3>
+        <p>
+          Describe another project here. For job applications, focus on impact:
+          what did you build, why, and what was the result?
+        </p>
+        <p><strong>Tools:</strong> Python, React, SQL</p>
+        <a href="#">GitHub Link</a>
       </div>
     </section>
 
-    <p><a class="back-link" href="index.html">← Back to research</a></p>
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="education-item">
+    <div class="education-left">
+      <img class="school-logo" src="ut-logo.png" alt="University of Texas at Austin logo">
+
+      <div class="edu-tags">
+        <span class="edu-tag">Biomedical Engineering</span>
+        <span class="edu-tag">Published Author</span>
+        <span class="edu-tag">BSL-1/BSL-2 Certified</span>
+      </div>
+    </div>
+
+    <div class="education-right">
+      <h3>The University of Texas at Austin</h3>
+      <p class="edu-degree">B.S. in Biomedical Engineering, Cockrell School of Engineering</p>
+
+      <div class="edu-point">
+        <span class="edu-icon">
+          <!-- bar-chart -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="20" x2="12" y2="10"></line>
+            <line x1="18" y1="20" x2="18" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="16"></line>
+          </svg>
+        </span>
+        <div>
+          <h4>Data &amp; Computational Focus</h4>
+          <p>Coursework and research spanning Python, R, SQL, statistical modeling, and data-driven analysis of biological systems.</p>
+        </div>
+      </div>
+
+      <div class="edu-point">
+        <span class="edu-icon">
+          <!-- dna / activity -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          </svg>
+        </span>
+        <div>
+          <h4>Research Emphasis</h4>
+          <p>Contributed to a peer-reviewed <em>Journal of Heredity</em> publication and worked across bioinformatics, neurogenetics, and cancer research labs.</p>
+        </div>
+      </div>
+
+      <div class="edu-point">
+        <span class="edu-icon">
+          <!-- settings / gear -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </span>
+        <div>
+          <h4>Senior Design</h4>
+          <p>Completed an industry-sponsored capstone with Natera focused on clinical genomics workflow modeling and lab operations analytics.</p>
+        </div>
+      </div>
+
+      <div class="edu-point">
+        <span class="edu-icon">
+          <!-- book-open -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </span>
+        <div>
+          <h4>Relevant Coursework</h4>
+          <div class="coursework-tags">
+            <!-- Fill these in with your actual courses -->
+            <span class="course-tag">Course Name 1</span>
+            <span class="course-tag">Course Name 2</span>
+            <span class="course-tag">Course Name 3</span>
+            <span class="course-tag">Course Name 4</span>
+            <span class="course-tag">Course Name 5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+            
+    <section id="resume">
+      <h2>Resume</h2>
+      <p>
+        You can view my resume here:
+      </p>
+      <a class="button" href="AbhiArekere_Resume.pdf" target="_blank">Open Resume</a>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: abhi02@utexas.edu</p>
+      <p>GitHub: <a href="https://github.com/abhiarekere">github.com/abhiarekere</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/abhimanyu-d-arekere">linkedin.com/in/abhimanyu-d-arekere</a></p>
+    </section>
 
   </main>
+
+  <footer>
+    <p>© 2026 Your Name</p>
+  </footer>
+
 </body>
 </html>
