@@ -500,3 +500,41 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+
+/* ===== Side-by-side image row ===== */
+.image-row {
+  display: flex;
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.image-row figure {
+  flex: 1;                 /* both images take equal width */
+  margin: 0;
+}
+
+.image-row img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;     /* keeps both the same shape/size */
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+
+.image-row figcaption {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Stack on mobile */
+@media (max-width: 600px) {
+  .image-row {
+    flex-direction: column;
+  }
+}
+
+
+  
