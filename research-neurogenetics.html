@@ -13,7 +13,7 @@
 
     <h1>Neurogenetics Assay Development & Sequencing Data Analysis</h1>
     <p class="author">Abhimanyu Arekere</p>
-    <p class="affiliation">Neurogenetics Lab · Texas A&amp;M University</p>
+    <p class="affiliation">Keene Lab · Texas A&amp;M University</p>
 
     <figure>
       <img src="images/neurogenetics.png" alt="Neurogenetics research workflow">
@@ -23,113 +23,58 @@
     </figure>
 
     <section class="abstract">
-      <h2>Abstract</h2>
+      <h2>About</h2>
       <p>
-        Across two summer research experiences in a neurogenetics lab, I worked with model organisms
-        including Mexican cavefish and Drosophila to study neural and behavioral phenotypes. My work
-        included brain dissections, tissue mounting, microscopy, immunofluorescence staining, behavioral
-        assay design, and computational analysis of biological data. I also ran R-based single-nucleus
-        RNA-seq analysis workflows using tools such as Seurat, Signac, and Monocle3, gaining exposure
-        to sequencing-derived neurogenetics datasets and reproducible computational biology workflows.
+        Across two summer research experiences in Dr. Alex Keene's neurogenetics lab, I worked on projects
+        connecting genes, neural circuits, sensory behavior, and disease-relevant phenotypes in model organisms
+        including <em>Drosophila</em> and Mexican cavefish. The lab broadly studies how animals sense internal
+        and external environmental changes and adapt behaviors such as sleep, feeding, foraging, and sensory
+        responses.
+      </p>
+      <p>
+        My primary 2025 project investigated whether Alzheimer's-associated neurodegeneration impairs the
+        olfactory system in <em>Drosophila</em>. I worked with fly models including human APOE4, APOE3, Arctic
+        Aβ42, GLAZ-related crosses, nsyb driver lines, and control backgrounds to evaluate odor-guided behavior.
+        My work also included brain dissections and ablations, tissue mounting, microscopy, immunofluorescence
+        staining of glial cells, behavioral assay design, and computational analysis of biological data.
+      </p>
+      <p>
+        In 2023, I also ran R-based single-nucleus RNA-seq analysis workflows using tools such as Seurat,
+        Signac, and Monocle3, gaining experience with sequencing-derived neurogenetics datasets and
+        reproducible computational biology workflows.
       </p>
     </section>
 
     <section>
       <h2>The Problem</h2>
       <p>
-        Neurogenetics experiments often require connecting biological structure, neural function, and
-        measurable behavior. This creates two major challenges: first, behavioral assays must be designed
-        carefully so that the measured behavior reflects the intended phenotype rather than a confounding
-        variable; second, experimental outputs such as microscopy images, behavioral results, and sequencing
-        data must be translated into quantitative, interpretable datasets.
+        Neurodegenerative disease models can show changes in sensory behavior, but behavioral assays are
+        difficult to interpret when the same animals may also have age-related, starvation-related, or
+        disease-related locomotor deficits. In the olfactory degeneration project, the central question was
+        whether Alzheimer's-associated <em>Drosophila</em> models showed impaired attraction to an odor stimulus,
+        or whether apparent differences in behavior could be explained by movement limitations.
       </p>
       <p>
-        In my Drosophila work, one specific challenge was that locomotor behavior could interfere with
-        interpretation of olfactory assay results. If a fly's movement ability affected its response in the
-        assay, then the experiment could mistakenly measure locomotor impairment instead of olfactory
-        deficit. This motivated an assay modification to improve experimental control.
+        This created a key experimental challenge: the assay needed to measure olfactory response rather than
+        general locomotion. If older, starved, or neurodegenerative flies had difficulty climbing or flying into
+        traps, the experiment could mistakenly measure reduced mobility instead of reduced odor detection.
+      </p>
+      <p>
+        More broadly, neurogenetics experiments require connecting biological structure, neural function, and
+        measurable behavior. Behavioral results, microscopy images, and sequencing-derived datasets all need
+        to be translated into quantitative, interpretable outputs while controlling for experimental confounders.
       </p>
     </section>
 
     <section>
-      <h2>What I Worked On</h2>
-      <ul>
-        <li>
-          Designed Drosophila behavioral assays to quantify olfactory deficits associated with
-          neurodegeneration-related phenotypes.
-        </li>
-        <li>
-          Developed an agar-based assay modification to reduce locomotor bias and improve the
-          interpretability of behavioral results.
-        </li>
-        <li>
-          Performed immunofluorescence staining and microscopy of Drosophila brain tissue and glial cells.
-        </li>
-        <li>
-          Conducted brain dissections, tissue mounting, ablations, and microscopy in Mexican cavefish
-          neurogenetics experiments.
-        </li>
-        <li>
-          Ran R-based snRNA-seq analysis workflows for larval cavefish datasets using Seurat, Signac,
-          Monocle3, and related packages.
-        </li>
-        <li>
-          Analyzed behavioral, imaging, and experimental assay data using Python, R, Excel, and lab software.
-        </li>
-      </ul>
-    </section>
-
-    <section class="key-finding">
-      <h2>Engineering Angle</h2>
+      <h2>Olfactory Degeneration Assay</h2>
       <p>
-        This work strengthened my ability to approach biological experiments as systems that can be
-        measured, modified, and improved. The Drosophila assay modification followed an engineering-style
-        workflow: identify a source of bias, redesign the assay environment, and improve the reliability of
-        the experimental readout. The computational work also exposed me to reproducible biological data
-        processing through R-based sequencing analysis workflows.
-      </p>
-    </section>
-
-    <section>
-      <h2>Methods & Workflow</h2>
-      <p>
-        The experimental side of this work involved preparing biological samples, performing dissections,
-        mounting tissue, conducting microscopy, and running behavioral assays. The computational side
-        involved running established R workflows for neurogenetics sequencing datasets, managing packages,
-        executing scripts, troubleshooting errors, and interpreting outputs from single-cell and single-nucleus
-        analysis tools.
+        The main behavioral assay used a trap-based olfaction setup to compare fly attraction toward a low,
+        attractive concentration of acetic acid against a water control. Each flask contained one fly line or
+        treatment condition, with modified microcentrifuge tube traps placed into the assay environment.
       </p>
       <p>
-        Together, these experiences connected wet-lab experimentation with quantitative analysis, helping
-        me understand how experimental design, data quality, and computational workflows influence the
-        reliability of biological research conclusions.
-      </p>
-    </section>
-
-    <section>
-      <h2>Skills &amp; Tools</h2>
-      <div class="tags">
-        <span class="tag">Neurogenetics</span>
-        <span class="tag">Drosophila</span>
-        <span class="tag">Mexican Cavefish</span>
-        <span class="tag">Behavioral Assays</span>
-        <span class="tag">Assay Optimization</span>
-        <span class="tag">Brain Dissections</span>
-        <span class="tag">Tissue Mounting</span>
-        <span class="tag">Microscopy</span>
-        <span class="tag">Immunofluorescence</span>
-        <span class="tag">R</span>
-        <span class="tag">Python</span>
-        <span class="tag">Excel</span>
-        <span class="tag">Seurat</span>
-        <span class="tag">Signac</span>
-        <span class="tag">Monocle3</span>
-        <span class="tag">snRNA-seq Workflows</span>
-      </div>
-    </section>
-
-    <p><a class="back-link" href="index.html">← Back to research</a></p>
-
-  </main>
-</body>
+        I prepared agar solution and poured it into wide-mouth conical flasks while still liquid. After cooling
+        and solidification, I created two indentations in the agar for microcentrifuge tubes: one containing a
+        cotton piece soaked in water as the control, and one containing a cotton piece soaked in an acetic acid
 </html>
