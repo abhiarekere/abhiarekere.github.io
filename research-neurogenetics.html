@@ -25,104 +25,162 @@
     <section class="abstract">
       <h2>About</h2>
       <p>
-        Across two summers in a neurogenetics lab studying how genes, neural circuits, and internal
-        state shape behavior, I worked with Mexican cavefish and Drosophila model systems. My primary
-        project asked a focused question: does Alzheimer's-associated neurodegeneration impair the
-        olfactory system in Drosophila?
+        Across two summer research experiences in Dr. Alex Keene's neurogenetics lab, I worked on projects
+        connecting genes, neural circuits, sensory behavior, and disease-relevant phenotypes in model organisms
+        including <em>Drosophila</em> and Mexican cavefish. The lab broadly studies how animals sense internal
+        and external environmental changes and adapt behaviors such as sleep, feeding, foraging, and sensory
+        responses.
       </p>
       <p>
-        My work spanned brain dissections and ablations, tissue mounting, microscopy, immunofluorescence
-        staining, and behavioral assay design, along with computational analysis of the resulting data.
-        Working with a graduate student, I also ran R-based single-nucleus RNA-seq (snRNA-seq) analysis
-        workflows using tools such as Seurat, Signac, and Monocle3, gaining hands-on exposure to
-        sequencing-derived neurogenetics datasets.
+        My primary 2025 project investigated whether Alzheimer's-associated neurodegeneration impairs the
+        olfactory system in <em>Drosophila</em>. I worked with fly models including human APOE4, APOE3, Arctic
+        Aβ42, GLAZ-related crosses, nsyb driver lines, and control backgrounds to evaluate odor-guided behavior.
+        My work also included brain dissections and ablations, tissue mounting, microscopy, immunofluorescence
+        staining of glial cells, behavioral assay design, and computational analysis of biological data.
+      </p>
+      <p>
+        In 2023, I also ran R-based single-nucleus RNA-seq analysis workflows using tools such as Seurat,
+        Signac, and Monocle3, gaining experience with sequencing-derived neurogenetics datasets and
+        reproducible computational biology workflows.
       </p>
     </section>
 
     <section>
       <h2>The Problem</h2>
       <p>
-        Neurodegenerative disease models can alter sensory behavior, but behavioral assays are difficult
-        to interpret when the same animals may also carry age-related or disease-related locomotor
-        deficits. If a fly's movement ability affects its response, an olfactory assay can mistakenly
-        measure impaired locomotion instead of an actual olfactory deficit.
+        Neurodegenerative disease models can show changes in sensory behavior, but behavioral assays are
+        difficult to interpret when the same animals may also have age-related, starvation-related, or
+        disease-related locomotor deficits. In the olfactory degeneration project, the central question was
+        whether Alzheimer's-associated <em>Drosophila</em> models showed impaired attraction to an odor stimulus,
+        or whether apparent differences in behavior could be explained by movement limitations.
       </p>
       <p>
-        This project used Drosophila Alzheimer's-associated genetic models to test olfactory function
-        while redesigning the assay to reduce that confound. More broadly, the work required connecting
-        biological structure, neural function, and measurable behavior, and translating experimental
-        outputs, such as microscopy images, behavioral results, and sequencing data, into quantitative,
-        interpretable datasets.
+        This created a key experimental challenge: the assay needed to measure olfactory response rather than
+        general locomotion. If older, starved, or neurodegenerative flies had difficulty climbing or flying into
+        traps, the experiment could mistakenly measure reduced mobility instead of reduced odor detection.
+      </p>
+      <p>
+        More broadly, neurogenetics experiments require connecting biological structure, neural function, and
+        measurable behavior. Behavioral results, microscopy images, and sequencing-derived datasets all need
+        to be translated into quantitative, interpretable outputs while controlling for experimental confounders.
       </p>
     </section>
 
     <section>
-      <h2>Primary Project: Olfactory Behavior in Alzheimer's Models</h2>
+      <h2>Olfactory Degeneration Assay</h2>
       <p>
-        The central project tested whether Drosophila models of Alzheimer's-associated neurodegeneration
-        show impaired olfactory function. We worked with several genetic backgrounds, including human
-        APOE4 (a late-onset Alzheimer's risk factor), the Arctic (E22G) amyloid-beta line (an aggressive,
-        early-onset familial model), APOE3 as a comparison isoform, and control lines such as w1118 and
-        nsyb-Gal4 drivers.
+        The main behavioral assay used a trap-based olfaction setup to compare fly attraction toward a low,
+        attractive concentration of acetic acid against a water control. Each flask contained one fly line or
+        treatment condition, with modified microcentrifuge tube traps placed into the assay environment.
       </p>
       <p>
-        Behavior was measured using odor trap assays in which flies chose between a water control and a
-        low, attractive concentration of acetic acid. Assays were run across genotype, age (5-, 10-, and
-        20-day cohorts), and treatment conditions (DMSO vs. rotenone, a stress-inducing agent), allowing
-        us to compare odor-guided behavior across disease models and aging.
-      </p>
-    </section>
-
-    <section>
-      <h2>Assay Redesign</h2>
-      <p>
-        My main contribution was redesigning the trap assay to isolate olfaction from locomotion. In the
-        original setup, flies had to climb or fly up into elevated tubes to reach the odor, which penalized
-        starved, aged, or neurodegenerative flies with reduced mobility.
+        I prepared agar solution and poured it into wide-mouth conical flasks while still liquid. After cooling
+        and solidification, I created two indentations in the agar for microcentrifuge tubes: one containing a
+        cotton piece soaked in water as the control, and one containing a cotton piece soaked in an acetic acid
+        solution that I prepared as the odor attractant. The tube caps were modified with pipette tips so flies
+        could enter the trap but could not exit.
       </p>
       <p>
-        I modified the design by embedding modified microcentrifuge-tube traps flush with the surface of
-        an agar-filled flask. Each flask held one water tube and one acetic acid tube, with pipette-tip
-        caps that let flies enter but not exit. Because the tube openings sat level with the agar surface,
-        flies could walk down into a trap with minimal locomotor effort, making the readout far more
-        specific to odor response rather than movement capacity.
+        Unlike previous setups where tubes were positioned in an empty flask and required flies to climb or fly
+        upward, this modified design placed the tube openings flush with the agar surface. This allowed flies to
+        crawl directly into either the water or acetic acid trap with minimal locomotor demand.
+      </p>
+      <p>
+        Assays were run across multiple genotypes, ages, and treatment conditions, including APOE4, APOE3,
+        Arctic Aβ42, W118/control lines, DMSO-treated groups, and rotenone-treated groups. Fly age groups
+        included older cohorts such as 5-day, 10-day, and 20-day flies, making locomotor control especially
+        important for interpreting olfactory behavior.
       </p>
     </section>
 
     <section>
-      <h2>Sequencing & Neural Tissue Work</h2>
-      <p>
-        Working alongside a graduate student, I contributed to a second research area involving both
-        wet-lab and computational components. On the wet-lab side, I performed Drosophila brain
-        dissections, tissue mounting, immunofluorescence staining, and microscopy of neural and glial
-        tissue.
-      </p>
-      <p>
-        On the computational side, I ran R-based snRNA-seq analysis workflows on larval cavefish
-        sequencing datasets using Seurat, Signac, Monocle3, and related packages. This involved package
-        setup, executing and troubleshooting scripts, and interpreting outputs from single-cell and
-        single-nucleus analysis pipelines. This is my primary sequencing-adjacent experience and gave me
-        direct exposure to reproducible computational workflows for high-dimensional sequencing data.
-      </p>
-    </section>
-
-    <section>
-      <h2>Additional Work: Activity Monitoring</h2>
-      <p>
-        On an occasional basis, I supported Drosophila Activity Monitor (DAM) experiments, helping set up
-        DAMs and work with the associated software for fly lines treated with candidate compounds from
-        other labs to evaluate whether activity phenotypes improved.
-      </p>
+      <h2>What I Worked On</h2>
+      <ul>
+        <li>
+          Designed and ran <em>Drosophila</em> behavioral assays to quantify olfactory deficits associated with
+          Alzheimer's-related neurodegeneration models.
+        </li>
+        <li>
+          Worked with APOE4, APOE3, Arctic Aβ42, GLAZ-related, nsyb, W118/control, DMSO-treated, and
+          rotenone-treated fly groups.
+        </li>
+        <li>
+          Prepared low-concentration acetic acid odor solutions and water controls for attraction-based
+          olfactory trap assays.
+        </li>
+        <li>
+          Developed an agar-based assay modification that placed trap entrances flush with the assay surface,
+          reducing locomotor bias and improving interpretability of behavioral results.
+        </li>
+        <li>
+          Performed immunofluorescence staining and microscopy of <em>Drosophila</em> brain tissue and glial cells.
+        </li>
+        <li>
+          Conducted brain dissections, ablations, tissue mounting, and microscopy in support of neurogenetics
+          experiments.
+        </li>
+        <li>
+          Ran R-based snRNA-seq analysis workflows for larval cavefish datasets using Seurat, Signac,
+          Monocle3, and related packages.
+        </li>
+        <li>
+          Analyzed behavioral, imaging, and experimental assay data using Python, R, Excel, and lab software.
+        </li>
+        <li>
+          Occasionally supported Drosophila Activity Monitor experiments for drug-treated fly lines by helping
+          set up activity monitoring workflows and associated software.
+        </li>
+      </ul>
     </section>
 
     <section class="key-finding">
-      <h2>Systems Thinking &amp; Approach</h2>
+      <h2>Assay Design &amp; Workflow Improvement</h2>
       <p>
-        This work strengthened my ability to treat biological experiments as systems that can be measured,
-        modified, and improved. The assay redesign followed a clear problem-solving loop: identify a source
-        of bias, re-engineer the experimental setup, and improve the reliability of the readout. The
-        computational work reinforced how experimental design, data quality, and reproducible workflows
-        together determine the reliability of biological conclusions.
+        My strongest contribution was modifying the physical design of the olfactory trap assay to reduce
+        locomotor bias. The original style of setup risked confounding odor-guided behavior with the ability of
+        starved, aged, or neurodegenerative flies to climb or fly into elevated traps. By embedding modified
+        microcentrifuge tube traps into agar with the entrances flush to the surface, the assay allowed flies to
+        make a lower-effort odor choice.
+      </p>
+      <p>
+        This improved the specificity of the behavioral readout by making the assay more focused on olfactory
+        attraction rather than general movement ability. The project strengthened my ability to approach
+        biological experiments as systems that can be measured, modified, troubleshot, and improved.
+      </p>
+    </section>
+
+    <section>
+      <h2>Sequencing Data Workflow Experience</h2>
+      <p>
+        In addition to behavioral and imaging work, I ran R-based single-nucleus RNA-seq analysis workflows
+        for larval cavefish neurogenetics datasets. These workflows used computational biology tools such as
+        Seurat, Signac, Monocle3, and related R packages to process and analyze high-dimensional
+        sequencing-derived data.
+      </p>
+      <p>
+        This work involved following established computational workflows, managing R package dependencies,
+        executing scripts, troubleshooting errors, and interpreting outputs from single-cell and single-nucleus
+        analysis tools. It gave me experience with sequencing-adjacent data processing and helped connect
+        wet-lab neurogenetics experiments with computational analysis.
+      </p>
+    </section>
+
+    <section>
+      <h2>Methods &amp; Workflow</h2>
+      <p>
+        The experimental side of this work involved preparing biological samples, maintaining fly crosses,
+        setting up behavioral assays, preparing odor and control conditions, performing dissections, mounting
+        tissue, conducting microscopy, and running immunofluorescence staining workflows.
+      </p>
+      <p>
+        The analytical side involved transforming assay, imaging, and sequencing-derived outputs into
+        interpretable data. I used Python, R, Excel, and lab software to analyze experimental results, compare
+        conditions, and support quantitative interpretation of biological phenotypes.
+      </p>
+      <p>
+        Together, these experiences connected wet-lab experimentation with quantitative analysis and helped
+        me understand how assay design, data quality, workflow reliability, and computational processing
+        influence biological research conclusions.
       </p>
     </section>
 
@@ -132,12 +190,19 @@
         <span class="tag">Neurogenetics</span>
         <span class="tag">Drosophila</span>
         <span class="tag">Mexican Cavefish</span>
+        <span class="tag">Alzheimer's Models</span>
+        <span class="tag">APOE4</span>
+        <span class="tag">Arctic Aβ42</span>
         <span class="tag">Behavioral Assays</span>
+        <span class="tag">Olfaction Assays</span>
         <span class="tag">Assay Optimization</span>
         <span class="tag">Brain Dissections</span>
+        <span class="tag">Ablations</span>
         <span class="tag">Tissue Mounting</span>
         <span class="tag">Microscopy</span>
         <span class="tag">Immunofluorescence</span>
+        <span class="tag">Glial Cells</span>
+        <span class="tag">Drosophila Activity Monitors</span>
         <span class="tag">R</span>
         <span class="tag">Python</span>
         <span class="tag">Excel</span>
