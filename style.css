@@ -387,6 +387,15 @@ a:hover {
   margin-bottom: 28px;
 }
 
+.edu-track {
+  font-size: 0.95rem;      /* slightly smaller than the degree line */
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: -20px;       /* pulls it up closer to the degree line */
+  margin-bottom: 28px;     /* keeps spacing before the icon bullets */
+}
+
+
 .edu-point {
   display: flex;
   gap: 16px;
