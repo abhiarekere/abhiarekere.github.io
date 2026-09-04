@@ -511,13 +511,13 @@ footer {
 .image-row figure {
   flex: 1;                 /* both images take equal width */
   margin: 0;
+  min-width: 0;
 }
 
 .image-row img {
   width: 100%;
-  height: 100%;
-  aspect-ratio: 4 / 3;     /* keeps both the same shape/size */
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
   border-radius: var(--radius);
   display: block;
 }
