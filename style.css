@@ -502,37 +502,37 @@ footer {
     align-items: flex-start;
 
 /* ===== Side-by-side image row ===== */
-.image-row {
+.detail-page .image-row {
   display: flex;
   gap: 20px;
   margin: 24px 0;
+  max-width: 500px;        /* <-- this is what actually shrinks them */
 }
 
-.image-row figure {
-  flex: 1;                 /* both images take equal width */
+.detail-page .image-row figure {
+  flex: 1;
   margin: 0;
   min-width: 0;
 }
 
-.image-row img {
+.detail-page .image-row img {
   width: 100%;
-  max-width: 100%;
   height: auto;
   border-radius: var(--radius);
   display: block;
 }
 
-.image-row figcaption {
+.detail-page .image-row figcaption {
   color: var(--text-muted);
   font-size: 0.9rem;
   text-align: center;
   margin-top: 8px;
 }
 
-/* Stack on mobile */
 @media (max-width: 600px) {
-  .image-row {
+  .detail-page .image-row {
     flex-direction: column;
+    max-width: 100%;
   }
 }
 
