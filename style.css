@@ -537,4 +537,12 @@ footer {
 }
 
 
+
+
+    /* Ensure only the outer research card gets a border, never the inner content */
+.research-content {
+  border: none !important;
+  background: transparent !important;
+}
+
   
