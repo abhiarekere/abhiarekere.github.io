@@ -545,4 +545,75 @@ footer {
   background: transparent !important;
 }
 
+
+/* ===== Project card ===== */
+.project-card {
+  padding: 32px 36px;
+}
+
+.project-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.project-role {
+  color: var(--accent);        /* accent-colored subtitle, like the screenshot */
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0 0 20px;            /* space before description */
+}
+
+.project-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 0 22px;            /* clear gap before the bullets block */
+}
+
+.project-label {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 12px;
+}
+
+.project-list {
+  list-style: none;            /* we'll draw custom bullets */
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.project-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;         /* spacing between bullets */
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.project-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);   /* green dot bullets */
+}
+
+.project-tools {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.project-tools strong {
+  color: var(--text);
+}
+    
+
   
