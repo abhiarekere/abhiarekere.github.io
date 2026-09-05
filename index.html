@@ -114,14 +114,15 @@
     
     </section>
 
-   <section id="projects">
+    
+<section id="projects">
   <h2>Projects</h2>
 
-  <div class="card">
-    <h3>Clinical Genomics Workflow Monitoring</h3>
-    <p class="project-subtitle">Industry-Sponsored Biomedical Engineering Senior Design Project</p>
+  <div class="card project-card">
+    <h3 class="project-title">Clinical Genomics Workflow Monitoring</h3>
+    <p class="project-role">Industry-Sponsored Biomedical Engineering Senior Design Project</p>
 
-    <p>
+    <p class="project-desc">
       Working with an industry sponsor, our team built a modular lab operations platform to
       simulate, monitor, and analyze the end-to-end journey of clinical test samples through a
       high-throughput clinical genomics testing workflow. The goal was to give lab operations
@@ -129,8 +130,8 @@
       turnaround-time risk before they became problems.
     </p>
 
-    <p><strong>What we built:</strong></p>
-    <ul>
+    <p class="project-label">What we built</p>
+    <ul class="project-list">
       <li>Directed acyclic graph (DAG)-based simulator to generate realistic synthetic sample data with probabilistic state transitions</li>
       <li>Hybrid PostgreSQL and Amazon Redshift database architecture to store and scale workflow data</li>
       <li>dbt transformations to turn raw sample transitions into structured, queryable analytics products</li>
@@ -139,7 +140,7 @@
       <li>Regression model to estimate sample turnaround time and flag at-risk samples for proactive intervention</li>
     </ul>
 
-    <p><strong>Tools:</strong> Python, SQL, PostgreSQL, dbt, Amazon Redshift, FastAPI, Cursor</p>
+    <p class="project-tools"><strong>Tools:</strong> Python, SQL, PostgreSQL, dbt, Amazon Redshift, FastAPI, Cursor</p>
   </div>
 
 </section>
