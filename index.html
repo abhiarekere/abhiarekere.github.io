@@ -120,10 +120,19 @@
       <div class="card">
         <h3>Clinical Genomics Workflow Monitoring</h3>
         <p>
-          Let's see if this thing works. Describe what the project does, what tools you used, and what you learned.
+        
+          As part of an industry-sponsored biomedical engineering senior design project, 
+          our team under the guidance of our industry sponsor built a modular lab operations platform to simulate, monitor,
+          and analyze the end-to-end journey of clinical test samples through a high-throughput clinical genomics 
+          testing workflow. The system used a directed acyclic graph based simulator to generate realistic synthetic
+          sample data with probabilistic state transitions, wrote those transitions into a hybrid PostgreSQL 
+          and Amazon Redshift database architecture, and transformed the data into structured analytics products using dbt.
+          A FastAPI backend served workflow metrics and sample level data to a front-end dashboard that surfaced pipeline status, bottlenecks, 
+          rework, SLA risk, and predicted versus actual turnaround time. We also trained a regression model to estimate sample turnaround time and 
+          flag at-risk samples, in an effort to support proactive intervention.
         </p>
-        <p><strong>Tools:</strong> Python, JavaScript, HTML, CSS</p>
-        <a href="#">GitHub Link</a>
+        <p><strong>Tools:</strong> Python, SQL, PostgreSQL, dbt, Amazon Redshift, FastAPI, Cursor</p>
+        
       </div>
 
       <div class="card">
@@ -167,7 +176,7 @@
         </span>
         <div>
           <h4>Data &amp; Computational Focus</h4>
-          <p>Coursework and research spanning Python, R, SQL, statistical modeling, and data-driven analysis of biological systems.</p>
+          <p>Coursework and research spanning Python, R, MATLAB, statistical modeling, and data-driven analysis of biological systems.</p>
         </div>
       </div>
 
