@@ -114,37 +114,37 @@
     
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
+   <section id="projects">
+  <h2>Projects</h2>
 
-      <div class="card">
-        <h3>Clinical Genomics Workflow Monitoring</h3>
-        <p>
-        
-          As part of an industry-sponsored biomedical engineering senior design project, 
-          our team under the guidance of our industry sponsor built a modular lab operations platform to simulate, monitor,
-          and analyze the end-to-end journey of clinical test samples through a high-throughput clinical genomics 
-          testing workflow. The system used a directed acyclic graph based simulator to generate realistic synthetic
-          sample data with probabilistic state transitions, wrote those transitions into a hybrid PostgreSQL 
-          and Amazon Redshift database architecture, and transformed the data into structured analytics products using dbt.
-          A FastAPI backend served workflow metrics and sample level data to a front-end dashboard that surfaced pipeline status, bottlenecks, 
-          rework, SLA risk, and predicted versus actual turnaround time. We also trained a regression model to estimate sample turnaround time and 
-          flag at-risk samples, in an effort to support proactive intervention.
-        </p>
-        <p><strong>Tools:</strong> Python, SQL, PostgreSQL, dbt, Amazon Redshift, FastAPI, Cursor</p>
-        
-      </div>
+  <div class="card">
+    <h3>Clinical Genomics Workflow Monitoring</h3>
+    <p class="project-subtitle">Industry-Sponsored Biomedical Engineering Senior Design Project</p>
 
-      <div class="card">
-        <h3>Another Project</h3>
-        <p>
-          Describe another project here. For job applications, focus on impact:
-          what did you build, why, and what was the result?
-        </p>
-        <p><strong>Tools:</strong> Python, React, SQL</p>
-        <a href="#">GitHub Link</a>
-      </div>
-    </section>
+    <p>
+      Working with an industry sponsor, our team built a modular lab operations platform to
+      simulate, monitor, and analyze the end-to-end journey of clinical test samples through a
+      high-throughput clinical genomics testing workflow. The goal was to give lab operations
+      real visibility into how samples move through testing — surfacing bottlenecks, rework, and
+      turnaround-time risk before they became problems.
+    </p>
+
+    <p><strong>What we built:</strong></p>
+    <ul>
+      <li>Directed acyclic graph (DAG)-based simulator to generate realistic synthetic sample data with probabilistic state transitions</li>
+      <li>Hybrid PostgreSQL and Amazon Redshift database architecture to store and scale workflow data</li>
+      <li>dbt transformations to turn raw sample transitions into structured, queryable analytics products</li>
+      <li>FastAPI backend serving workflow metrics and sample-level data to a front-end dashboard</li>
+      <li>Dashboard surfacing pipeline status, bottlenecks, rework, SLA risk, and predicted vs. actual turnaround time</li>
+      <li>Regression model to estimate sample turnaround time and flag at-risk samples for proactive intervention</li>
+    </ul>
+
+    <p><strong>Tools:</strong> Python, SQL, PostgreSQL, dbt, Amazon Redshift, FastAPI, Cursor</p>
+  </div>
+
+</section>
+
+  
 
 <section id="education">
   <h2>Education</h2>
