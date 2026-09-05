@@ -26,57 +26,78 @@
       <h2>Abstract</h2>
       <p>
         Chromosome number is a fundamental genomic trait, yet the causes of variation
-        in its rate of evolution across lineages remain poorly understood. This project
-        tested whether effective population size, approximated using range size, shapes
-        rates of chromosome fusions and fissions in Carnivora. Using reproducible R
-        workflows and Bayesian phylogenetic modeling, we found that species with small
-        range sizes show elevated rates of chromosome number evolution, supporting the
-        hypothesis that structural rearrangements are mildly deleterious and more likely
-        to fix through genetic drift in smaller populations [2].
+        in its rate of evolution across lineages remain poorly understood. This research
+        question tested whether effective population size shapes rates of chromosome
+        fusions and fissions in Carnivora. We found that species with small range sizes
+        show elevated rates of chromosome number evolution, providing evidence that
+        structural rearrangements are mildly deleterious and more likely to fix through
+        genetic drift in smaller populations.
       </p>
     </section>
 
     <section>
       <h2>The Problem</h2>
       <p>
-        Across large clades, most lineages show relative stasis in chromosome number
-        while a handful show striking variation. Prior work suggested female meiotic
-        drive shapes karyotype evolution in mammals, but Carnivora shows variation that
-        the meiotic drive model could not adequately explain [2]. We hypothesized that
-        variation in effective population size might underlie this rate variation.
+        Prior work suggests that biased female meiotic drive shapes karyotype evolution
+        in mammals, however the variation observed in Carnivora could not be explained
+        by this meiotic drive alone. The hypothesis tested here was that effective
+        population size is that missing factor. Small populations lose the ability to
+        purge slightly deleterious mutations, so structural rearrangements that would
+        be filtered out elsewhere can drift to fixation.
+      </p>
+      <p>
+        Range size is an imperfect proxy for population size, since density, social
+        structure, and habitat fragmentation all interfere. With this being said, it
+        was chosen because it can be estimated for nearly every species in the clade.
+        It was decided that full taxonomic coverage takes precedence over precision.
       </p>
     </section>
 
     <section>
       <h2>What I Worked On</h2>
-      <ul>
-        <li>
-          Collected and integrated multiple biological data types: chromosome numbers
-          from karyotype compilations, GBIF species occurrence data, and species-level
-          phylogenies [2].
-        </li>
-        <li>
-          Used the GeoRange R library to estimate species range sizes from longitudinal
-          and latitudinal occurrence data, then validated estimates against previously
-          published range data [2].
-        </li>
-        <li>
-          Helped run reproducible R workflows for downstream comparative analyses,
-          with all scripts version-controlled and reproducible.
-        </li>
-      </ul>
+      <p>
+        The study drew on three sources that share no common format or identifier
+        scheme: haploid chromosome counts pulled from published karyotype compilations,
+        species occurrence records from the Global Biodiversity Information Facility,
+        and a distribution of 100 candidate phylogenies from a prior study. GBIF alone
+        returned 1,457,081 occurrence records spanning 1,023 species, of which
+        1,030,610 records across 110 species survived reconciliation with the
+        phylogeny.
+      </p>
+      <p>
+        Getting to that intersection meant resolving taxonomy across sources,
+        filtering coordinate records, and reshaping everything into the structure
+        the modeling packages expected. I wrote R scripts for that cleaning and
+        integration work, and contributed to the statistical and phylogenetic
+        analysis of the resulting dataset.
+      </p>
+      <p>
+        Occurrence coordinates were converted into range area estimates using the
+        GeoRange package, and those estimates were checked against independently
+        published range data for 18 species prior to entering comparative analysis.
+        The correlation held at r = 0.61 (n = 18, P = 0.007), which was the signal
+        that the geographic pipeline was sound enough to build on.
+      </p>
     </section>
 
     <section>
       <h2>Methods</h2>
       <p>
-        We fit a model of chromosome number evolution to each tree in a posterior
-        distribution of 100 trees, estimating separate rates of fusion and fission for
-        lineages with small versus large range sizes. Models were built using the
-        chromePlus R package and fit using a Bayesian approach in diversitree, with
-        MCMC run for 500 generations across each tree [2]. We also implemented tip-rate
-        reconstruction and a rate heterogeneity analysis to check whether a small number
-        of outlier taxa were driving the results [2].
+        Chromosome number evolution was modeled as two competing processes, fusion
+        and fission, with rates estimated separately for species in small and large
+        range categories. Because range size is continuous and the method requires a
+        binary trait, species were split at the dataset median of roughly 29 million
+        square kilometers. Models were built using the chromePlus R package and fit
+        using a Bayesian approach in diversitree, with MCMC run for 500 generations
+        across each tree.
+      </p>
+      <p>
+        Three checks guarded against overreading the result. Tip rate reconstruction
+        tested whether a few taxa with extreme karyotypes were dragging the estimate.
+        A rate heterogeneity method assigned every branch in the tree to one of 21
+        scaled rate bins to locate where fast evolution actually concentrated. And 100
+        neutral binary traits were simulated and pushed through the same pipeline to
+        measure how often the analysis manufactures a positive result from noise.
       </p>
     </section>
 
@@ -85,9 +106,9 @@
       <p>
         Rates of both fusions and fissions were elevated in taxa with small range sizes
         relative to those with large range sizes (ΔR<sub>fusion</sub> = 0.101, ΔR<sub>fission</sub> = 0.163,
-        with 95% credible intervals excluding zero) [2]. This supports the conclusion that
+        with 95% credible intervals excluding zero). This supports the conclusion that
         chromosome-number mutations are mildly deleterious or underdominant, and are more
-        likely to fix via drift in species with small effective population sizes [2].
+        likely to fix via drift in species with small effective population sizes.
       </p>
     </section>
 
