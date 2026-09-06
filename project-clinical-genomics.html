@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Genomics Workflow Monitoring</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="detail-page">
+
+    <span class="badge">Aug 2025 – May 2026</span>
+
+    <h1>Clinical Genomics Workflow Monitoring</h1>
+    <p class="author">Abhimanyu Arekere</p>
+    <p class="affiliation">Industry-Sponsored Senior Design Project · UT Austin Department of Biomedical Engineering</p>
+
+    <section class="abstract">
+      <h2>Overview</h2>
+      <p>
+        A tumor-informed sequencing assay is only as useful as the speed at which its result
+        reaches a clinician. The biology can be exquisitely sensitive and the answer still arrive
+        too late to change a treatment decision. That gap is an operations problem rather than a
+        molecular one, and it is invisible to the assay itself.
+      </p>
+      <p>
+        Our team built a lab operations platform that simulates, monitors, and predicts the
+        movement of clinical samples through a high-throughput genomics testing workflow. The
+        system generates realistic synthetic sample data, transforms it into structured analytics
+        products, predicts turnaround time for samples currently in flight, and surfaces
+        bottlenecks, rework, and at-risk cases on a dashboard built for operators to read at a glance.
+      </p>
+    </section>
+
+    <section>
+      <h2>The Problem</h2>
+      <p>
+        A high-volume clinical lab produces an enormous quantity of operational exhaust: every
+        sample logs a timestamp at every station, and every quality-control failure logs a return
+        to a prior step. The data exists. What did not exist was a way to read it forward. Delays
+        were identified after they had already consumed the turnaround budget, and bottlenecks were
+        diagnosed retrospectively rather than anticipated.
+      </p>
+      <p>
+        The sponsor's need was a way to model the end-to-end journey of a clinical test sample so
+        that operations staff could see problems developing instead of confirming them afterward.
+      </p>
+      <p>
+        There was a structural obstacle. Real workflow data is bound to protected health
+        information, which makes it unavailable for a student project and slow to work with even
+        inside the company. That constraint shaped the entire architecture, and it is why the
+        system begins with a simulator rather than a database connection.
+      </p>
+    </section>
+
+    <section>
+      <h2>What We Built</h2>
+
+      <h3>Workflow Simulator</h3>
+      <p>
+        The assay pipeline is represented as a directed acyclic graph, with nodes as process states
+        and weighted edges as transitions. Samples enter at sample preparation or primer rearray and
+        progress toward sequencing, with quality-control checkpoints that can route a sample backward
+        into rework. Total case duration is drawn from a Gaussian distribution, and the probability
+        that a sample leaves its current node grows with elapsed time according to an exponential
+        holding function. Branching is stochastic: a uniform random draw is compared against
+        accumulated edge weights to select the next state. A dry-run mode validates workflow logic
+        without committing anything to the database.
+      </p>
+      <p>
+        The result is synthetic data that reproduces the shape of real lab behavior — including the
+        queueing and rework patterns that make turnaround time hard to predict — without touching
+        patient data.
+      </p>
+
+      <h3>Hybrid Database Architecture</h3>
+      <p>
+        Operational and analytical workloads want opposite things from a database, so we split them.
+        PostgreSQL serves as the transactional store, holding live sample state and transition history
+        for the dashboard to query. Amazon Redshift serves as the analytical warehouse, holding
+        historical data at a volume suited to aggregation and model training. Transformations in both
+        paths are defined in dbt through layered models moving from staging to intermediate to marts
+        and a unified data model, giving the pipeline full lineage from raw event to dashboard tile.
+      </p>
+
+      <h3>Predictive Model</h3>
+      <p>
+        A linear regression estimates time-to-close for each active case. Features are deliberately
+        austere: site, day of week, hour of case open, and elapsed time from open to DNA extraction.
+        Granular per-step durations were excluded on purpose, because a feature that only exists once
+        a step has finished cannot be used to predict a sample still sitting in that step. Including
+        them would have inflated the metrics and produced a model that fails the moment it meets a
+        <li>Building against synthetic data does come at the cost of s
+
+
+
+
+
+
+
+              <section>
+      <h2>What I Learned</h2>
+      <ul>
+        <li>Preventing data leakage is a design decision made before any model is trained, not a diagnostic run afterward. The features that would have made our metrics look best were exactly the ones unavailable at prediction time, and excluding them was the difference between a model that reports well and a model that works.</li>
+        <li>A negative result can be more useful than a positive one when it correctly identifies the binding constraint. Learning that more data would not help told us where to spend effort, which a marginally better R² would not have.</li>
+        <li>Splitting hot and cold paths taught me that database architecture is a question about access patterns rather than storage. A dashboard asking for the current state of one sample and a training job aggregating a year of history are different problems, and forcing both through one system compromises each.</li>
+        <li>Building against synthetic data is a legitimate engineering strategy under privacy constraint, and it carries a specific cost: the model learns your assumptions rather than reality. Being explicit about that boundary is what separates a useful prototype from a misleading one.</li>
+        <li>The dashboard iterations changed how I think about output. Our early versions were accurate and unusable. Information that an operator has to hunt for during a shift may as well not have been computed.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills &amp; Tools</h2>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">SQL</span>
+        <span class="tag">R</span>
+        <span class="tag">dbt</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Amazon Redshift</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">React</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Vite</span>
+        <span class="tag">Tailwind CSS</span>
+        <span class="tag">DBeaver</span>
+        <span class="tag">Git</span>
+        <span class="tag">Cursor</span>
+        <span class="tag">DAG Modeling</span>
+        <span class="tag">State Machine Design</span>
+        <span class="tag">Stochastic Simulation</span>
+        <span class="tag">Feature Engineering</span>
+        <span class="tag">Linear Regression</span>
+        <span class="tag">Data Leakage Prevention</span>
+        <span class="tag">Hot/Cold Path Architecture</span>
+        <span class="tag">Workflow KPI Definition</span>
+        <span class="tag">Dashboard Design</span>
+      </div>
+    </section>
+
+    <p><a class="back-link" href="index.html">← Back to research</a></p>
+
+  </main>
+</body>
+</html>
