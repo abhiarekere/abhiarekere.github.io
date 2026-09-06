@@ -145,30 +145,31 @@
   <h2>Projects</h2>
 
   <div class="card project-card">
-    <h3 class="project-title">Clinical Genomics Workflow Monitoring</h3>
-    <p class="project-role">Industry-Sponsored Biomedical Engineering Senior Design Project</p>
+    <h3 class="project-title">
+      <a href="project-clinical-genomics.html">Clinical Genomics Workflow Monitoring</a>
+    </h3>
+    <p class="project-role">Industry-Sponsored Senior Design Project · UT Austin BME</p>
 
     <p class="project-desc">
-      Working with an industry sponsor, our team built a modular lab operations platform to
-      simulate, monitor, and analyze the end-to-end journey of clinical test samples through a
-      high-throughput clinical genomics testing workflow. The goal was to give lab operations
-      real visibility into how samples move through testing — surfacing bottlenecks, rework, and
-      turnaround-time risk before they became problems.
+      Built a lab operations platform that simulates, monitors, and predicts how clinical
+      samples move through a high-throughput genomics testing workflow — surfacing bottlenecks,
+      rework, and turnaround-time risk before they become problems. Combines a DAG-based
+      workflow simulator, a hybrid PostgreSQL/Redshift architecture, dbt transformations, a
+      turnaround-time prediction model, and an operator-facing dashboard.
     </p>
 
-    <p class="project-label">What we built</p>
-    <ul class="project-list">
-      <li>Directed acyclic graph (DAG)-based simulator to generate realistic synthetic sample data with probabilistic state transitions</li>
-      <li>Hybrid PostgreSQL and Amazon Redshift database architecture to store and scale workflow data</li>
-      <li>dbt transformations to turn raw sample transitions into structured, queryable analytics products</li>
-      <li>FastAPI backend serving workflow metrics and sample-level data to a front-end dashboard</li>
-      <li>Dashboard surfacing pipeline status, bottlenecks, rework, SLA risk, and predicted vs. actual turnaround time</li>
-      <li>Regression model to estimate sample turnaround time and flag at-risk samples for proactive intervention</li>
-    </ul>
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">SQL</span>
+      <span class="tag">dbt</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">Amazon Redshift</span>
+      <span class="tag">FastAPI</span>
+      <span class="tag">React</span>
+    </div>
 
-    <p class="project-tools"><strong>Tools:</strong> Python, SQL, PostgreSQL, dbt, Amazon Redshift, FastAPI, Cursor</p>
+    <a class="research-link" href="project-clinical-genomics.html">Read more →</a>
   </div>
-
 </section>
 
   
