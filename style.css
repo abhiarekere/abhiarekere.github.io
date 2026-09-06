@@ -184,6 +184,7 @@ a:hover {
   font-size: 1.9rem;
   font-weight: 700;
   margin-bottom: 16px;
+  color: var(--accent);
 }
 
 .research-content h3 a,
