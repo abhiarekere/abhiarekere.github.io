@@ -568,8 +568,8 @@ footer {
 .project-desc {
   color: var(--text-muted);
   font-size: 1.05rem;
-  line-height: 1.7;
-  margin: 0 0 22px;            /* clear gap before the bullets block */
+  line-height: 1.85;
+  margin: 0 0 26px;
 }
 
 .project-label {
@@ -580,29 +580,33 @@ footer {
 }
 
 .project-list {
-  list-style: none;            /* we'll draw custom bullets */
-  padding: 0;
+  list-style: none;
+  padding-left: 8px;
   margin: 0 0 24px;
 }
 
 .project-list li {
   position: relative;
-  padding-left: 22px;
-  margin-bottom: 12px;         /* spacing between bullets */
+  padding-left: 26px;
+  margin-bottom: 14px;
   color: var(--text-muted);
   font-size: 1.02rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .project-list li::before {
   content: "";
   position: absolute;
-  left: 4px;
-  top: 0.6em;
+  left: 8px;
+  top: 0.65em;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent);   /* green dot bullets */
+  background: var(--accent);
+}
+
+
+
 }
 
 .project-tools {
