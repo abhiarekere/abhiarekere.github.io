@@ -52,6 +52,17 @@ header p {
   margin-right: auto;
 }
 
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 24px;
+  border: 3px solid var(--accent);
+}
+
+
 /* ===== Navigation ===== */
 nav {
   margin-top: 24px;
