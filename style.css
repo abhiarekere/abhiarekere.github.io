@@ -461,7 +461,7 @@ a:hover {
 }
 
 /* ===== Green hover border for cards ===== */
-.research-item,
+
 .card,
 .education-item {
   border: 1px solid transparent;
@@ -469,7 +469,6 @@ a:hover {
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.research-item:hover,
 .card:hover,
 .education-item:hover {
   border-color: var(--accent);
