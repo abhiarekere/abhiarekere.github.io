@@ -585,6 +585,10 @@ footer {
   padding-left: 8px;
   margin: 0 0 24px;
 }
+    
+.project-card .tags {
+  margin-top: 20px;
+}
 
 .project-list li {
   position: relative;
@@ -606,9 +610,6 @@ footer {
   background: var(--accent);
 }
 
-
-
-}
 
 .project-tools {
   color: var(--text-muted);
