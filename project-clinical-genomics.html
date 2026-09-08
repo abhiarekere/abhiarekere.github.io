@@ -54,74 +54,106 @@
     </section>
 
     <section>
-      <h2>What We Built</h2>
+  <h2>What We Built</h2>
 
-      <h3>Workflow Simulator</h3>
-      <p>
-        The assay pipeline is represented as a directed acyclic graph, with nodes as process states
-        and weighted edges as transitions. Samples enter at sample preparation or primer rearray and
-        progress toward sequencing, with quality-control checkpoints that can route a sample backward
-        into rework. Total case duration is drawn from a Gaussian distribution, and the probability
-        that a sample leaves its current node grows with elapsed time according to an exponential
-        holding function. Branching is stochastic: a uniform random draw is compared against
-        accumulated edge weights to select the next state. A dry-run mode validates workflow logic
-        without committing anything to the database.
-      </p>
-      <p>
-        The result is synthetic data that reproduces the shape of real lab behavior — including the
-        queueing and rework patterns that make turnaround time hard to predict — without touching
-        patient data.
-      </p>
+  <div class="project-detail-card">
+    <h2>Workflow Simulator</h2>
+    <p>
+      The assay pipeline is represented as a directed acyclic graph, with nodes as process states
+      and weighted edges as transitions. Samples enter at sample preparation or primer rearray and
+      progress toward sequencing, with quality-control checkpoints that can route a sample backward
+      into rework.
+    </p>
+    <p>
+      The simulator generates synthetic workflow data that reproduces the shape of real lab behavior,
+      including queueing, stochastic branching, rework events, and turnaround-time variation, without
+      touching patient data.
+    </p>
+  </div>
 
-      <h3>Hybrid Database Architecture</h3>
-      <p>
-        Operational and analytical workloads want opposite things from a database, so we split them.
-        PostgreSQL serves as the transactional store, holding live sample state and transition history
-        for the dashboard to query. Amazon Redshift serves as the analytical warehouse, holding
-        historical data at a volume suited to aggregation and model training. Transformations in both
-        paths are defined in dbt through layered models moving from staging to intermediate to marts
-        and a unified data model, giving the pipeline full lineage from raw event to dashboard tile.
-      </p>
+  <div class="project-detail-card">
+    <h2>Hybrid Database Architecture</h2>
+    <p>
+      Operational and analytical workloads require different database patterns, so we split the system
+      into two paths. PostgreSQL serves as the transactional store for live sample state and transition
+      history, while Amazon Redshift serves as the analytical warehouse for historical aggregation and
+      model training.
+    </p>
+    <p>
+      dbt transformations define the data pipeline through layered models, moving from staging to
+      intermediate to marts and a unified data model. This gives the platform traceability from raw
+      workflow events to dashboard metrics.
+    </p>
+  </div>
 
-      <h3>Predictive Model</h3>
-      <p>
-        A linear regression estimates time-to-close for each active case. Features are deliberately
-        austere: site, day of week, hour of case open, and elapsed time from open to DNA extraction.
-        Granular per-step durations were excluded on purpose, because a feature that only exists once
-        a step has finished cannot be used to predict a sample still sitting in that step. Including
-        them would have inflated the metrics and produced a model that fails the moment it meets a
-        <li>Building against synthetic data does come at the cost of s
+  <div class="project-detail-card">
+    <h2>Predictive Model</h2>
+    <p>
+      A linear regression model estimates time-to-close for active cases using features available at
+      prediction time, including site, day of week, hour of case open, and elapsed time from case open
+      to DNA extraction.
+    </p>
+    <p>
+      We deliberately excluded granular per-step durations because those values are only known after
+      a step is complete. Including them would have inflated model performance while creating data
+      leakage, producing a model that looked better in testing but would fail on live cases.
+    </p>
+  </div>
 
+  <div class="project-detail-card">
+    <h2>Lab Operations Dashboard</h2>
+    <p>
+      The dashboard presents pipeline state as a single readable surface for lab operators, showing
+      sample flow through the pipeline, rework flags, SLA risk, active case status, median estimated
+      time to completion, and predicted versus actual turnaround time.
+    </p>
 
+    <figure class="project-detail-image">
+      <img src="dashboard.png" alt="Clinical genomics workflow monitoring dashboard mockup">
+      <figcaption>
+        Rendered dashboard mockup illustrating sample flow, SLA risk flags, active case status,
+        and turnaround-time monitoring.
+      </figcaption>
+    </figure>
 
-    <div class="project-image-card">
-      <h4 class="project-image-title">Lab Operations Dashboard</h4>
-      <p class="project-image-desc">
-        A view of the dashboard showing sample flow through the pipeline, SLA risk flags, and
-        active case status across testing stages.
-      </p>
+    <p class="project-note">
+      This is a rendered mockup built to illustrate the dashboard's layout and functionality, not a
+      screenshot of the original system. All values, case numbers, and details shown are synthetic and
+      do not reflect real patient or laboratory data.
+    </p>
+  </div>
+</section>
 
-      <img class="project-image" src="images/dashboard.png" alt="Clinical genomics lab operations dashboard">
+   <section>
+  <h2>What I Learned</h2>
 
-      <p class="project-image-note">
-        This is a rendered mockup built to illustrate the dashboard's layout and functionality, not
-        a screenshot of the original system. All values, case numbers, and details shown are
-        synthetic and do not reflect real patient or laboratory data.
-      </p>
-    </div>
-
-
-
-              <section>
-      <h2>What I Learned</h2>
-      <ul>
-        <li>Preventing data leakage is a design decision made before any model is trained, not a diagnostic run afterward. The features that would have made our metrics look best were exactly the ones unavailable at prediction time, and excluding them was the difference between a model that reports well and a model that works.</li>
-        <li>A negative result can be more useful than a positive one when it correctly identifies the binding constraint. Learning that more data would not help told us where to spend effort, which a marginally better R² would not have.</li>
-        <li>Splitting hot and cold paths taught me that database architecture is a question about access patterns rather than storage. A dashboard asking for the current state of one sample and a training job aggregating a year of history are different problems, and forcing both through one system compromises each.</li>
-        <li>Building against synthetic data is a legitimate engineering strategy under privacy constraint, and it carries a specific cost: the model learns your assumptions rather than reality. Being explicit about that boundary is what separates a useful prototype from a misleading one.</li>
-        <li>The dashboard iterations changed how I think about output. Our early versions were accurate and unusable. Information that an operator has to hunt for during a shift may as well not have been computed.</li>
-      </ul>
-    </section>
+  <div class="project-detail-card">
+    <ul>
+      <li>
+        Preventing data leakage is a design decision made before any model is trained, not a
+        diagnostic run afterward. The features that would have made our metrics look best were
+        exactly the ones unavailable at prediction time.
+      </li>
+      <li>
+        A negative result can be more useful than a positive one when it correctly identifies the
+        binding constraint. Learning that more data would not help told us where to spend effort.
+      </li>
+      <li>
+        Splitting hot and cold data paths taught me that database architecture is about access
+        patterns, not just storage. A live dashboard and a historical training job are different
+        problems.
+      </li>
+      <li>
+        Building against synthetic data is a legitimate engineering strategy under privacy
+        constraints, but the model learns the simulator's assumptions rather than real lab behavior.
+      </li>
+      <li>
+        Dashboard design changed how I think about output. Information that an operator has to hunt
+        for during a shift may as well not have been computed.
+      </li>
+    </ul>
+  </div>
+</section>
 
     <section>
       <h2>Skills &amp; Tools</h2>
