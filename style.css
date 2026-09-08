@@ -666,6 +666,87 @@ footer {
   font-style: italic;
   margin: 0;
 }
+
+
+/* ===== Project detail cards for clinical genomics page ===== */
+  color: var(--accent);
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.project-detail-card h3 {
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 22px 0 8px;
+}
+
+.project-detail-card p {
+  color: #d4d4d8;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.project-detail-card p:last-child {
+  margin-bottom: 0;
+}
+
+.project-detail-card ul {
+  padding-left: 22px;
+  margin: 14px 0 0;
+}
+
+.project-detail-card li {
+  color: #d4d4d8;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+.project-detail-image {
+  margin-top: 28px;
+}
+
+.project-detail-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+  border: 1px solid var(--card-border);
+}
+
+.project-detail-image figcaption {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+.project-note {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-top: 18px;
+}
+
+/* Optional: slightly tighter project page headings */
+.detail-page > section:not(.project-detail-card) h2 {
+  margin-top: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project-detail-card {
+    padding: 24px 22px;
+  }
+
+  .project-detail-card h2 {
+    font-size: 1.35rem;
+  }
+}
     
 
   
