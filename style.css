@@ -630,6 +630,42 @@ footer {
 .project-tools strong {
   color: var(--text);
 }
+
+    .project-image-card {
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 8px 0 32px;
+}
+
+.project-image-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.project-image-desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.project-image-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
     
 
   
