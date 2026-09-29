@@ -747,6 +747,40 @@ footer {
     font-size: 1.35rem;
   }
 }
-    
+
+/* ===== Top bar on detail pages ===== */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #0f0f12;
+  border-bottom: 1px solid var(--card-border);
+  padding: 14px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.site-nav .site-name {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav nav {
+  margin-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+
+.site-nav nav a {
+  margin: 0;
+}
+
+
+  
 
   
