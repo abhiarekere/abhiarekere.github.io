@@ -511,6 +511,8 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+  }
+}
 
 /* ===== Side-by-side image row ===== */
 .detail-page .image-row {
