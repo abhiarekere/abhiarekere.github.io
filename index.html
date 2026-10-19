@@ -171,6 +171,34 @@
 
     <a class="research-link" href="project-clinical-genomics.html">Read more →</a>
   </div>
+
+    <div class="card project-card">
+    <h3 class="project-title">Germline Variant Calling Benchmark</h3>
+    <p class="project-role">Independent Project · Aug 2026 – Present</p>
+
+    <p class="project-desc">
+      Running a germline short variant calling pipeline locally on public whole exome data from
+      NA12878 (HG001), the Genome in a Bottle pilot sample with a curated truth set that lets every
+      call be scored as a true positive, false positive, or false negative. The pipeline is
+      nf-core/sarek, a Nextflow workflow that runs each tool in its own Docker container: paired
+      FASTQ reads are aligned to GRCh38 with BWA-MEM, GATK MarkDuplicates flags duplicate reads,
+      BaseRecalibrator and ApplyBQSR correct systematic base quality errors, and HaplotypeCaller
+      calls SNVs and indels into a sample VCF. I review FastQC and MultiQC reports for read quality
+      and duplication before evaluating calls, then score them against the GIAB v4.2.1 HG001
+      benchmark with rtg vcfeval, which matches variants at the haplotype level so the same variant
+      written two different ways still counts as a match. Benchmarking runs and precision, recall,
+      and F1 comparisons across configurations are in progress.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Nextflow</span>
+      <span class="tag">nf-core/sarek</span>
+      <span class="tag">Docker</span>
+      <span class="tag">BWA-MEM</span>
+      <span class="tag">GATK</span>
+      <span class="tag">RTG Tools</span>
+    </div>
+  </div>
 </section>
 
   
