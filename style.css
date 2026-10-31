@@ -576,6 +576,15 @@ footer {
   color: var(--text);
   margin: 0 0 4px;
 }
+.project-title a,
+.project-title a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-title a:hover {
+  color: var(--accent);
+}
 
 .project-role {
   color: var(--accent);        /* accent-colored subtitle, like the screenshot */
